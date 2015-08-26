@@ -81,6 +81,7 @@ public class ToDatabase extends HttpServlet
 	
 		HttpSession session= request.getSession(true);
 		ID= session.getAttribute("restaurantID").toString();
+
 		System.out.println("Session Variable " +ID);
 		rating=request.getParameter("rating");
 		System.out.println(rating);
@@ -124,17 +125,19 @@ public class ToDatabase extends HttpServlet
 	    		}
       
         Statement stmt = conn.createStatement();
-	    ResultSet rs2 = stmt.executeQuery("select * from Reviews where ID=" + ID);
+	    ResultSet rs2 = stmt.executeQuery("select * from Reviews where ID= " + ID );
          
       
        
          	while(rs2.next())
          	{
+         		System.out.println("select * from Reviews where ID= thissssss" + ID);
          		RatingDate= rs2.getString("ratingDate");
          		//System.out.println(RatingDate);
          		Rating= rs2.getString("Rating");
          		Review= rs2.getString("reviews");
-         		ResultSet rs3 = stmt.executeQuery("select * from appusers where ID= '" + rs2.getString("ID") +"'");
+         		System.out.println("Thiiiiiiiiiiiiiiis" +rs2.getString("ID"));
+         		ResultSet rs3 = stmt.executeQuery("select * from appusers where ID= '" + rs2.getString("UserID") +"'");
            		rs3.next();
          		output+="<nav class=\"navbar navbar-default \">" +
 	         		       "<div class=\"form-group\"> <p class=\"navbar-text navbar-left\">Rating date:"+ RatingDate +

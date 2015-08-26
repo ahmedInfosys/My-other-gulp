@@ -60,7 +60,7 @@ ${message2}
 Review:<br>
 
 <div class="container">
-	<form role="form">
+	<form action ="ToDatabase" method="get">
 		<div ">
 			<textarea class="form-control" rows="4" cols="200" name="review"></textarea><br>
 			</div>

@@ -87,7 +87,7 @@ public class SignIn extends HttpServlet {
 		         {
 		      
 		        	 page = "/Profile.jsp";
-		        	user_output = rs2.getString("FirstName") + " " + rs2.getString("FirstName");
+		        	user_output = rs2.getString("FirstName") + " " + rs2.getString("LastName");
 		        	
 		        	request.setAttribute("user", user_output);
 		        	ID= rs2.getString("ID");

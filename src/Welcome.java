@@ -89,6 +89,7 @@ public class Welcome extends HttpServlet {
 	                 }
 	                HttpSession session = request.getSession();
 	 	        	session.setAttribute("restaurantID", coID);
+	 	        	System.out.println(coID);
 	            }
 	            conn.close();
 	        }
